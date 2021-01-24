@@ -18,7 +18,13 @@ const generate_random_time = distance => {
 }
 
 const generate_random_message = () => {
-    let swimmer = swimmerNames[Math.floor(Math.random() * swimmerNames.length)]
-    let event = events[Math.floor(Math.random() * events.length)]
+    const swimmer = swimmerNames[Math.floor(Math.random() * swimmerNames.length)]
+    const event = events[Math.floor(Math.random() * events.length)]
+    const eventTime = generate_random_time(event.distance) 
     
+    if (eventTime < event.record) {
+        return `${swimmer} swam the ${event.distance.toString} in ${eventTime.toString} seconds and broke the previous record of ${event.record.toString}!`
+    } else {
+        return `${swimmer} swam the ${event.distance.toString} in ${eventTime.toString} seconds`
+    }
 }
