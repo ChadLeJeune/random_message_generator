@@ -37,7 +37,7 @@ const generate_random_message = () => {
     if (eventTime < event.record) {
         return `${swimmer} swam the ${event.distance.toString()} ${event.stroke} in ${time_from_seconds(eventTime)} and broke the previous record of ${time_from_seconds(event.record)}!`;
     } else {
-        return `${swimmer} swam the ${event.distance.toString()} ${event.stroke} in ${time_from_seconds(eventTime)}.`;
+        return `${swimmer} swam the ${event.distance.toString()} ${event.stroke} in ${time_from_seconds(eventTime)}. The meet record still stands at ${time_from_seconds(event.record)}.`;
     };
 }
 
